@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    --font-primary: 'Lato', sans-serif;
+    --font-headings: 'Playfair Display', serif;
+    --color-primary: #8B4513; /* Um marrom sóbrio, cor de madeira/terra */
+    --color-secondary: #D4AC79; /* Um bege/dourado claro, para detalhes */
+    --color-dark: #3a3a3a;
+    --color-light: #fdfdfd;
+    --color-background: #f4f4f4;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Estilos Gerais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-headings);
+    color: var(--color-primary);
+}
+
+/* --- Cabeçalho e Navegação --- */
+.main-header {
+    background: var(--color-light);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-headings);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-login {
+    background: var(--color-primary);
+    color: var(--color-light);
+    margin-left: 25px;
+}
+
+.btn-login:hover {
+    background: #65320d;
+    transform: translateY(-2px);
+}
+
+
+/* --- Carrossel de Imagens --- */
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Altura do carrossel */
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    filter: brightness(0.6); 
+}
+
+.carousel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-light);
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-light);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.carousel-text p {
+    font-size: 1.2rem;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s ease;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+
+.features-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--color-light);
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.features-section .subtitle {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+
+.main-footer {
+    background: var(--color-dark);
+    color: #ccc;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.main-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+    }
+    
+    .main-nav {
+        margin-top: 1rem;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-nav li {
+        margin-left: 0;
+    }
+
+    .carousel-text h1 {
+        font-size: 2.5rem;
+    }
+}
